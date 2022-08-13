@@ -13,6 +13,7 @@ public class AdminHomePage {
 	}
 	
 	//declaration
+	//de
 	
 	@FindBy(xpath = "//a[text()=' Create Category ']") private WebElement createCategoryLnk;
 	
