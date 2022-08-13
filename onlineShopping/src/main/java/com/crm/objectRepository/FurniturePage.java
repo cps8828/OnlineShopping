@@ -5,11 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class FurniturePage {
+import com.crm.genericUtilities.WebDriverUtility;
+
+public class FurniturePage extends WebDriverUtility {
 	/**
 	 * C.p.Srivastava
 	 */
-	//declaration
 	//declaration 
 	 @FindBy(xpath="//a[contains(text(),'Beds')]")private WebElement BedsLink;
 	 
@@ -66,6 +67,8 @@ public class FurniturePage {
      
      @FindBy(xpath="//input[@id='billingpincode']")private WebElement BillinfPinCodeTextBox;
      
+     @FindBy(xpath="//td[text()='1']/../td[@class='cart-product-name-info']")private WebElement TimeTakeConfirm;
+     
      
      
      
@@ -77,6 +80,10 @@ public class FurniturePage {
 
 	public WebElement getBedsLink() {
 		return BedsLink;
+	}
+
+	public WebElement getTimeTakeConfirm() {
+		return TimeTakeConfirm;
 	}
 
 	public WebElement getSofasLink() {
@@ -145,6 +152,14 @@ public class FurniturePage {
 
 	public WebElement getTextLink() {
 		return TextLink;
+	}
+	public void HandleAlertPopup(WebDriver driver,String expectedMsg) {
+		switchToAlertPopUpAndAccept(driver, expectedMsg);
+	}
+	public void verify() {
+		TimeTakeConfirm.click();
+		
+		
 	}
      
      

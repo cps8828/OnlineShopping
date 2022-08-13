@@ -100,6 +100,14 @@ public class MyCartPage {
 	//shipping address.......
 	
 	public void toBilling(String billAddressName, String billingStateName, String billingCityName, String  bllingPinCode ) {
+		billingAddress.clear();
+		billingState.clear();
+		billingCity.clear();
+		billingPinCode.clear();
+		billingUpdateBtn.click();
+		
+		
+		
 		billingAddress.sendKeys(billAddressName);
 		billingState.sendKeys(billingStateName);
 		billingCity.sendKeys(billingCityName);
@@ -110,12 +118,22 @@ public class MyCartPage {
 	//billing address.........
 	
 	public void toShipping(String shipAddressName, String shippingStateName, String shippingCityName, String shipingPinCode) {
+		shippingAddress.clear();
+		shippingState.clear();
+		shippingCity.clear();
+		shippingPinCode.clear();
+		shippingUpdateBtn.click();
+		
+		
+		
 		shippingAddress.sendKeys(shipAddressName);
 		shippingState.sendKeys(shippingStateName);
 		shippingCity.sendKeys(shippingCityName);
 		shippingPinCode.sendKeys(shipingPinCode);
 		shippingUpdateBtn.click();
 	}
+	
+	
 
 
 }
