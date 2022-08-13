@@ -125,6 +125,7 @@ public class MyAccountPage {
 		contactEdt.sendKeys(contactNumber);
 		upadateBtn.click();	
 	}
+	
 	//method for TO change the user password
 	public void toChangeThePassword(String currentPwd,String newPwd,String confirmPwd)
 	{

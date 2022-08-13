@@ -119,6 +119,9 @@ public class LoginPage {
 	 * @param password
 	 * click on submit button
 	 */
+	public void clickLogin() {
+		
+	}
 
 	public void loginToApplication(String username,String password)
 	{

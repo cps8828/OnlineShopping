@@ -1,4 +1,8 @@
-url http://localhost:8888
-username admin
-password admin
+url http://rmgtestingserver/domain/Online_Shopping_Application/login.php
+username prakashcp1994@gmail.com
+password molu1234@S
 browser chrome
+AlertMsg Product has been added to the cart
+AlertMsg1 Billing Address has been updated
+AlertMsg2 Shipping Address has been updated
+confirmpage Induscraft Solid Wood King Bed With Storage

@@ -21,6 +21,8 @@ public class HomePage extends WebDriverUtility{
 	@FindBy(xpath = "//a[text()='My Cart']") private WebElement myCartLink;
 	@FindBy(xpath = "//a[text()='Login']") private WebElement loginLink;
 	@FindBy(xpath = "//span[text()='Track Order']") private WebElement trackOrderLink;
+	@FindBy(xpath = "//a[text()='Logout']") private WebElement logoutBtn;
+	
 	
 	//search Files Elements
 	@FindBy(xpath  = "//h2[text()='Shopping Portal']") private WebElement shopingPortalLink;
@@ -221,6 +223,9 @@ public class HomePage extends WebDriverUtility{
 		return next05;
 	}
 
+	public WebElement getLogoutBtn() {
+		return logoutBtn;
+	}
 	
 	//04
 	public void toSearchTheProduct(String productName)
@@ -231,4 +236,19 @@ public class HomePage extends WebDriverUtility{
 	{
 		searchButton.click();
 	}
+
+
+	public Object getCreateCategoryLnk1() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public Object getCreateCategoryLnk() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	
 }

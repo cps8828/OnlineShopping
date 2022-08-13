@@ -8,19 +8,10 @@ package com.crm.genericUtilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-
-import com.crm.objectRepository.HomePage;
-import com.crm.objectRepository.LoginPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class BaseClass 
+public class BaseClass1 
 {
 	public static WebDriver sdriver;
 	public WebDriver driver;
@@ -30,20 +21,13 @@ public class BaseClass
 	public WebDriverUtility  wLib=new WebDriverUtility();
 	public JavaUtility jLib=new JavaUtility();
 
-	/**
-	 * connecting to database
-	 */
-	@BeforeSuite
-	public void dbConfig()
-	{
-		dLib.connectToDB();
-	}
+	
 	/**
 	 * launching the browser
 	 * @throws Throwable
 	 */
 	//@Parameters("BROWSER")
-	@BeforeClass
+	
 	public void launchTheBrowser()
 	{  
 		String BROWSER = null;
@@ -84,57 +68,91 @@ public class BaseClass
 		sdriver.get(URL);
 		//maximize the screen
 		driver.manage().window().maximize();
-	}
-	/**
-	 * login to application
-	 */
-	@BeforeMethod
-	public void loginToAppln()
-	{
-		String USERNAME = null;
-		try {
-			USERNAME = fLib.getPropertKeyValue("username");
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}
-		String PASSWORD = null;
-		try {
-			PASSWORD = fLib.getPropertKeyValue("password");
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}
-		HomePage hpage=new HomePage(driver);
-		hpage.getLoginLink().click();
+		
 
-		LoginPage lpage=new LoginPage(driver);
-		lpage.loginToApplication(USERNAME, PASSWORD);
-		System.out.println("Login successful");
 	}
-	/**
-	 * logout from application
-	 */
-//	@AfterMethod
-//	public void logoutFromAppln()
-//	{
-//		//HomePage hpage=new HomePage(driver);
-//		//hpage.logout(driver);
-//		//System.out.println("Logout successful");
-//	}
-//	/**
-//	 * close the browser
-//	 */
-//	@AfterClass
-//	public void closeTheBrowser()
-//	{
-//		driver.quit();
-//		System.out.println("Browser successfully closed");
-//	}
-//	/**
-//	 * close database configuration
-//	 */
-//	@AfterSuite
-//	public void closeDBconfig()
-//	{
-//		dLib.closeDB();
-//	}
+	
+	
 }
+
+
+
+
+
+
+
+
+
+//
+//
+//
+///**
+// * connecting to database
+// */
+//@BeforeSuite
+//public void dbConfig()
+//{
+//	dLib.connectToDB();
+//}
+//
+///**
+// * close the browser
+// */
+//@AfterClass
+//public void closeTheBrowser()
+//{
+//	driver.quit();
+//	System.out.println("Browser successfully closed");
+//}
+///**
+// * close database configuration
+// */
+//@AfterSuite
+//public void closeDBconfig()
+//{
+//	dLib.closeDB();
+//}
+//
+//
+///**
+// * login to application
+// */
+//@BeforeMethod
+//public void loginToAppln()
+//{
+//	String USERNAME = null;
+//	try {
+//		USERNAME = fLib.getPropertKeyValue("username");
+//	} catch (Throwable e) {
+//		e.printStackTrace();
+//	}
+//	String PASSWORD = null;
+//	try {
+//		PASSWORD = fLib.getPropertKeyValue("password");
+//	} catch (Throwable e) {
+//		e.printStackTrace();
+//	}
+
+//	LoginPage lpage=new LoginPage(driver);
+//	HomePage homePage = new HomePage(driver);
+//	homePage.getLoginLink().click();
+//	lpage.getEmailTextEdt().sendKeys(USERNAME);
+//	lpage.getPasswordTxtEdt().sendKeys(PASSWORD);
+//	//lpage.loginToApplication(USERNAME, PASSWORD);
+//	lpage.getSubmitBtn().click();
+//	System.out.println("Login successful");
+//}
+///**
+// * logout from application
+// */
+//@AfterMethod
+//public void logoutFromAppln()
+//{
+//	HomePage hpage=new HomePage(driver);
+//	//hpage.logout(driver);
+//	System.out.println("Logout successful");
+//}
+//
+//
+//
+//
